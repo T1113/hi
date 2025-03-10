@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寻找小卓 - 爱宠寻回</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #f0c040;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #e74c3c;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .urgent {
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .pet-info {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .pet-photo {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .pet-photo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pet-details {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 20px;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-list {
+            list-style: none;
+        }
+        
+        .info-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-list i {
+            margin-right: 15px;
+            width: 25px;
+            color: #f0c040;
+            text-align: center;
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .reward {
+            text-align: center;
+            padding: 20px;
+            background-color: #fef9e7;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 2px dashed #f0c040;
+        }
+        
+        .reward h2 {
+            color: #f0c040;
+            border-bottom: none;
+        }
+        
+        .reward-amount {
+            font-size: 2rem;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .message {
+            padding: 20px;
+            background-color: #eaf7fd;
+            border-radius: 10px;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .pet-photo, .pet-details {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-paw"></i> 寻找小卓</h1>
+            <p class="subtitle">我们非常想念我们的爱宠，请帮助我们找到它</p>
+            <div class="urgent"><i class="fas fa-exclamation-circle"></i> 紧急寻找</div>
+        </header>
+        
+        <div class="pet-info">
+            <div class="pet-photo">
+                <!-- 小卓的真实照片 -->
+                <img src="照片/B87F3F70-CED5-4430-9451-9D84CFE812BD_1_102_o.jpeg" alt="小卓的照片">
+            </div>
+            
+            <div class="pet-details">
+                <h2><i class="fas fa-info-circle"></i> 宠物信息</h2>
+                <ul class="info-list">
+                    <li><i class="fas fa-dog"></i> <strong>名字：</strong>小卓</li>
+                    <li><i class="fas fa-palette"></i> <strong>特征：</strong>黄色，比熊和泰迪的串串</li>
+                    <li><i class="fas fa-birthday-cake"></i> <strong>出生日期：</strong>2017年6月</li>
+                    <li><i class="fas fa-weight"></i> <strong>体重：</strong>12-15斤</li>
+                    <li><i class="fas fa-notes-medical"></i> <strong>特殊标记：</strong>前排下牙缺少</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <h2><i class="fas fa-address-card"></i> 主人联系方式</h2>
+            <ul class="info-list">
+                <li><i class="fas fa-user"></i> <strong>姓名：</strong>唐臻卓</li>
+                <li><i class="fas fa-phone"></i> <strong>电话：</strong>19866624289</li>
+                <li><i class="fab fa-weixin"></i> <strong>微信：</strong>同手机号码</li>
+                <li><i class="fas fa-home"></i> <strong>地址：</strong>深圳市</li>
+            </ul>
+        </div>
+        
+        <div class="reward">
+            <h2><i class="fas fa-gift"></i> 寻回奖励</h2>
+            <p>如果您找到了小卓并安全归还，我们将提供：</p>
+            <div class="reward-amount">¥5,000</div>
+            <p>感谢您的善心帮助！</p>
+        </div>
+        
+        <div class="message">
+            <p>亲爱的好心人，如果您看到或找到了我们的小卓，请立即与我们联系。它是我们家庭的重要成员，我们非常想念它。我们承诺，只要能够安全健康地找回小卓，必定重金酬谢。感谢您的帮助与关心！</p>
+        </div>
+        
+        <footer>
+            <p>© 2023 寻找小卓 | 感谢您的关注与帮助</p>
+        </footer>
+    </div>
+</body>
+</html>

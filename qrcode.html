@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小卓寻回二维码</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            color: #e74c3c;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .qrcode-container {
+            margin: 30px auto;
+        }
+        
+        .instructions {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #eaf7fd;
+            border-radius: 10px;
+            text-align: left;
+        }
+        
+        .instructions h2 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .note {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        footer {
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-qrcode"></i> 小卓寻回二维码</h1>
+        
+        <div class="qrcode-container" id="qrcode"></div>
+        
+        <div class="instructions">
+            <h2>使用说明：</h2>
+            <ol>
+                <li>上方显示的是寻找小卓网页的二维码</li>
+                <li>您可以使用手机扫描此二维码直接访问网页</li>
+                <li>也可以点击下方按钮下载二维码图片</li>
+                <li>将二维码打印出来或分享给他人，帮助寻找小卓</li>
+            </ol>
+        </div>
+        
+        <a href="#" id="download-link" class="download-btn" download="小卓寻回二维码.png">下载二维码</a>
+        
+        <p class="note">注：二维码指向的网页包含小卓的照片和详细信息，扫描后可在任何设备上查看。</p>
+    </div>
+    
+    <footer>
+        <p>© 2023 寻找小卓 | 感谢您的关注与帮助</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 使用固定的公网URL，确保二维码在任何设备上都能正确访问
+            // 注意：部署到GitHub Pages后，请将下面的URL替换为您的GitHub Pages实际URL
+            const targetUrl = 'https://您的用户名.github.io/find-xiaozuo/index.html';
+            
+            // 创建QR码
+            const qr = qrcode(0, 'M');
+            qr.addData(targetUrl);
+            qr.make();
+            
+            // 显示QR码
+            document.getElementById('qrcode').innerHTML = qr.createImgTag(5);
+            
+            // 设置下载链接
+            const qrImage = document.querySelector('#qrcode img');
+            qrImage.onload = function() {
+                const canvas = document.createElement('canvas');
+                const size = qrImage.width;
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fillRect(0, 0, size, size);
+                ctx.drawImage(qrImage, 0, 0);
+                
+                const downloadLink = document.getElementById('download-link');
+                downloadLink.href = canvas.toDataURL('image/png');
+            };
+        });
+    </script>
+</body>
+</html>
